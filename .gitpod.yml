@@ -2,7 +2,6 @@ tasks:
   - name: Init Task
     init:  pip install codeinterpreterapi[all] openpyxl
     command:   |
-      cd frontend
       streamlit run frontend/app.py --browser.gatherUsageStats=False
 
 ports:
@@ -12,3 +11,4 @@ ports:
     onOpen: open-browser
   - name: API Service
     port: 8888
+    onOpen: ignore
